@@ -1,6 +1,6 @@
 const form = document.getElementById('form-agenda');
 const nome = [];
-const email = [];
+const telefone = [];
 
 let linhas = '';
 
@@ -15,24 +15,24 @@ form.addEventListener('submit', function(e) {
     function adicionaLinha() {
 
         const inputNomeCadastrado = document.getElementById('nome-cadastrado');
-        const inputEmailCadastrado = document.getElementById('email-cadastrado');
+        const inputTelefoneCadastrado = document.getElementById('telelfone-cadastrado');
 
         if (nome.includes(inputNomeCadastrado.value)) {
            
         } else {
             nome.push(inputNomeCadastrado.value);
-            email.push(parseFloat(inputEmailCadastrado.value));
+            telefone.push(parseFloat(inputTelefoneCadastrado.value));
         
             let linha = '<tr>';
             linha += `<td>${inputNomeCadastrado.value}</td>`;
-            linha += `<td>${inputEmailCadastrado.value}</td>`;
+            linha += `<td>${inputTelefoneCadastrado.value}</td>`;
             linha += '</tr>';
         
             linhas += linha;
         }
 
         inputNomeCadastrado.value = '';
-        inputEmailCadastrado.value = '';
+        inputTelefoneCadastrado.value = '';
     };
 
     function atualizaTabela() {
